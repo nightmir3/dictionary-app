@@ -2,20 +2,21 @@ import React from 'react'
 
 function SearchBar () {
   return (
-    <form className='bg-gray-200 p-3 rounded-xl w-full'>
+    <form className='bg-gray-200 p-3 rounded-xl w-full flex gap-3'>
       <label
-        className='flex gap-3'
+        className='sr-only'
         htmlFor=''
-      >
-        <input
-          className='bg-gray-200 w-full'
-          type='text'
-        />
-        <button
-          type='submit'
-        >🔎
-        </button>
+      >Search
       </label>
+      <input
+        className='bg-gray-200 w-full not-sr-only'
+        type='text'
+      />
+      <button
+        className='not-sr-only'
+        type='submit'
+      >🔍
+      </button>
     </form>
   )
 }
