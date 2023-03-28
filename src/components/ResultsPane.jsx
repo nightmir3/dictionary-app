@@ -11,7 +11,7 @@ function ResultsPane () {
           </h1>
           <p
             className='text-purple-600 text-xl'
-          >/ki:bo.d/
+          >/'ki:bo.d/
           </p>
         </div>
         <div className='bg-gray-200 p-4 aspect-square rounded-[50%] text-purple-600 bg-purple-200'>

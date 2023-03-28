@@ -1,19 +1,22 @@
 import React from 'react'
 
 function SearchBar () {
+  const searchInput = React.useId()
   return (
-    <form className='bg-gray-200 p-3 rounded-xl w-full flex gap-3'>
+    <form
+      className='bg-gray-200 p-3 rounded-xl w-full flex gap-3'
+    >
       <label
         className='sr-only'
-        htmlFor=''
+        htmlFor='formId'
       >Search
       </label>
       <input
-        className='bg-gray-200 w-full not-sr-only'
+        id={searchInput}
+        className='bg-gray-200 w-full'
         type='text'
       />
       <button
-        className='not-sr-only'
         type='submit'
       >🔍
       </button>
