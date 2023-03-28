@@ -10,7 +10,7 @@ function App () {
 
   return (
     <div
-      className={`${activeFont} dark:text-slate-100 dark:bg-slate-800 container p-6 mx-auto flex flex-col gap-6`}
+      className={`${activeFont} dark:text-slate-100 dark:bg-slate-800 container p-6 mx-auto flex flex-col gap-7`}
     >
       <Header />
       <SearchBar />
