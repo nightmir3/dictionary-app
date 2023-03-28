@@ -1,4 +1,5 @@
 import React from 'react'
+import { HiPlay, HiChevronRight } from 'react-icons/hi2'
 
 function ResultsPane () {
   return (
@@ -6,7 +7,7 @@ function ResultsPane () {
       <main className='flex justify-between items-center'>
         <div>
           <h1
-            className='text-4xl bold mb-1'
+            className='text-4xl font-bold mb-1'
           > keyboard
           </h1>
           <p
@@ -15,21 +16,21 @@ function ResultsPane () {
           </p>
         </div>
         <div className='bg-gray-200 p-4 aspect-square rounded-[50%] text-purple-600 bg-purple-200'>
-          ▶️
+          <HiPlay className='text-2xl' />
         </div>
       </main>
       {/* definitions */}
-      <section className='flex flex-col gap-3'>
+      <section className='flex flex-col gap-4'>
         <h2
-          className='flex gap-3 text-xl italic w-full items-center'
+          className='flex gap-4 text-xl italic w-full items-center'
         > noun
           <span className='h-0.5 bg-gray-200 w-full' />
         </h2>
         <h3 className='text-md text-gray-500'>Meaning</h3>
         <dl
-          className='flex flex-col gap-3
-          [&>dd]:before:content-["▶️"]
-          [&>dd]:before:text-purple-600'
+          className='flex flex-col gap-4
+          [&>dd]:before:content-["•"]
+          [&>dd]:before:text-purple-600 [&>dd]:before:text-4xl [&>dd]:before:pt-[-10px]'
         >
           <dd className='flex gap-4'>(etc.) A set of keys used to operate a typewriter, computer etc.
           </dd>
@@ -40,14 +41,14 @@ function ResultsPane () {
         </dl>
         <h3 className='text-md text-gray-500'>Synonyms <span className='ml-5 text-purple-600 bold'>electronic keyboard</span></h3>
       </section>
-      <section className='flex flex-col gap-3'>
+      <section className='flex flex-col gap-4'>
         <h2
-          className='flex gap-3 text-xl italic w-full items-center'
+          className='flex gap-4 text-xl italic w-full items-center'
         > verb
           <span className='h-0.5 bg-gray-200 w-full' />
         </h2>
         <h3 className='text-md text-gray-500'>Meaning</h3>
-        <dl className='flex flex-col gap-3 [&>p]:before:content-[""]
+        <dl className='flex flex-col gap-4 [&>p]:before:content-[""]
           [&>dd]:before:content-["▶️"]
           [&>dd]:before:text-purple-600'
         >
