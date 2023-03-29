@@ -5,7 +5,7 @@ function SearchBar () {
   const searchInput = React.useId()
   return (
     <form
-      className='bg-gray-100 py-3 px-5 rounded-2xl w-full flex gap-4'
+      className='flex w-full gap-4 px-5 py-3 bg-gray-100 rounded-2xl'
     >
       <label
         className='sr-only'
@@ -14,13 +14,13 @@ function SearchBar () {
       </label>
       <input
         id={searchInput}
-        className='bg-inherit w-full font-bold text-black'
+        className='w-full text-sm font-bold text-black bg-inherit'
         type='text'
         value='keyboard'
       />
       <button
         type='submit'
-      ><HiOutlineSearch className='text-purple-600 text-2xl' />
+      ><HiOutlineSearch className='text-2xl text-purple-600' />
       </button>
     </form>
   )
