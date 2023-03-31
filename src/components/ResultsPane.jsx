@@ -16,10 +16,6 @@ function ResultsPane () {
             className='font-sans text-lg tracking-wider text-purple-600 md:text-2xl'
           ><GB className='inline h-3' /> /ˈkiːbɔːd/
           </p>
-          {/* <p
-            className='font-sans text-lg tracking-wider text-purple-600'
-          ><US className='inline h-3' /> /ˈkiˌbɔrd/
-          </p> */}
         </div>
         <div className='bg-gray-200 p-4 aspect-square rounded-[50%] text-purple-600 bg-purple-200'>
           <HiPlay className='text-md' />
