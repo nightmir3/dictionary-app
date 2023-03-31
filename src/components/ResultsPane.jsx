@@ -7,13 +7,13 @@ function ResultsPane () {
   return (
     <div className='flex flex-col gap-6'>
       <main className='flex items-center justify-between'>
-        <div className='flex flex-col'>
+        <div className='flex flex-col md:gap-2'>
           <h1
-            className='mb-1 text-3xl font-bold tracking-wide'
+            className='mb-1 text-3xl font-bold tracking-wide md:text-5xl'
           > keyboard
           </h1>
           <p
-            className='font-sans text-lg tracking-wider text-purple-600'
+            className='font-sans text-lg tracking-wider text-purple-600 md:text-2xl'
           ><GB className='inline h-3' /> /ˈkiːbɔːd/
           </p>
           {/* <p
@@ -28,44 +28,46 @@ function ResultsPane () {
       {/* definitions */}
       <section className='flex flex-col gap-6'>
         <h2
-          className='flex items-center w-full gap-4 italic font-bold text-l'
+          className='flex items-center w-full gap-4 italic font-bold md:text-lg'
         > noun
           <span className='h-0.5 bg-gray-200 w-full' />
         </h2>
-        <h3 className='text-sm text-gray-500'>Meaning</h3>
+        <h3 className='text-sm text-gray-500 md:text-base'>Meaning</h3>
         <dl
-          className='flex flex-col gap-4
+          className='flex flex-col gap-4 text-sm md:text-base
+          [&>dd]:before:text-purple-600
           [&>dd]:before:content-["•"]
-          [&>dd]:before:text-purple-600 [&>dd]:before:text-3xl [&>dd]:before:w-5 [&>dd]:before:leading-6'
+          [&>dd]:before:text-3xl
+          [&>dd]:before:leading-6'
         >
-          <dd className='flex gap-4 text-sm leading-6'>(etc.) A set of keys used to operate a typewriter, computer etc.
+          <dd className='flex gap-4 leading-6'>(etc.) A set of keys used to operate a typewriter, computer etc. lorem
           </dd>
-          <dd className='flex gap-4 text-sm leading-6'>A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.
+          <dd className='flex gap-4 leading-6'>A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.
           </dd>
-          <dd className='flex gap-4 text-sm leading-6'>A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.
+          <dd className='flex gap-4 leading-6'>A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.
           </dd>
         </dl>
-        <h3 className='text-sm text-gray-500'>Synonyms <span className='ml-5 text-purple-600 bold'>electronic keyboard</span></h3>
+        <h3 className='text-sm text-gray-500 md:text-base'>Synonyms <span className='ml-5 text-purple-600 bold'>electronic keyboard</span></h3>
       </section>
-      <section className='flex flex-col gap-4'>
+      <section className='flex flex-col gap-6'>
         <h2
-          className='flex items-center w-full gap-4 italic font-bold text-l'
+          className='flex items-center w-full gap-4 italic font-bold md:text-lg'
         > verb
           <span className='h-0.5 bg-gray-200 w-full' />
         </h2>
-        <h3 className='text-sm text-gray-500'>Meaning</h3>
-        <dl className='flex flex-col gap-4
+        <h3 className='text-sm text-gray-500 md:text-base'>Meaning</h3>
+        <dl className='flex flex-col gap-4 text-sm md:text-base
           [&>dd]:before:content-["•"]
-          [&>dd]:before:text-purple-600 [&>dd]:before:text-3xl [&>dd]:before:w-5 [&>dd]:before:leading-6'
+          [&>dd]:before:text-purple-600 [&>dd]:before:text-3xl [&>dd]:before:leading-6'
         >
-          <dd className='flex gap-4 text-sm leading-6'>
+          <dd className='flex gap-4 leading-6'>
             To type on a computer keyboard.
           </dd>
-          <p className='flex gap-4 text-sm italic leading-6 text-gray-500 ml-9'>"Keyboarding is the part of this job I hate the most."</p>
+          <p className='flex gap-4 italic leading-6 text-gray-500 ml-7'>"Keyboarding is the part of this job I hate the most."</p>
         </dl>
       </section>
       <section className='flex flex-col w-full gap-2 pt-6 border-t-2 border-gray-200'>
-        <h3 className='text-sm text-gray-500 '>Source</h3>
+        <h3 className='text-sm text-gray-500 md:text-base'>Source</h3>
         <a
           className='text-xs leading-6 underline'
           href='https://en.wiktionary.org/wiki/keyboard' target='_blank' rel='noreferrer'

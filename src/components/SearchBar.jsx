@@ -14,7 +14,7 @@ function SearchBar () {
       </label>
       <input
         id={searchInput}
-        className='w-full text-sm font-bold text-black bg-inherit'
+        className='w-full text-sm font-bold text-black md:text-base bg-inherit'
         type='text'
         value='keyboard'
       />
