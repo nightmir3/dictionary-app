@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
+  '@uiball/loaders': ^1.2.6
   '@vitejs/plugin-react': ^3.1.0
   autoprefixer: ^10.4.14
   country-flag-icons: ^1.5.7
@@ -15,6 +16,7 @@ specifiers:
   vite: ^4.2.0
 
 dependencies:
+  '@uiball/loaders': 1.2.6_biqbaboplfbrettd7655fr4n2y
   country-flag-icons: 1.5.7
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -599,6 +601,16 @@ packages:
   /@types/scheduler/0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
     dev: true
+
+  /@uiball/loaders/1.2.6_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Db3be5pG9ciZa1Rxr6Iwv8bIwVP+g00m3GYQFsu3j7B9T16MpHhnGXLksuNtKlePdP3FCTFGpFrXbJz4GG/OOg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /@vitejs/plugin-react/3.1.0_vite@4.2.1:
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==}
