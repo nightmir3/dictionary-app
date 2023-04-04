@@ -1,8 +1,8 @@
 import React from 'react'
-import { HiPlay } from 'react-icons/hi2'
 import { HiExternalLink } from 'react-icons/hi'
 import { US, GB } from 'country-flag-icons/react/3x2'
 import RelatedWords from './RelatedDefinitions'
+import AudioPlayer from './AudioPlayer'
 
 function ResultsPane ({ res }) {
   console.log(res)
@@ -14,14 +14,14 @@ function ResultsPane ({ res }) {
             className='mb-1 text-3xl font-bold tracking-wide md:text-5xl'
           > {res.word}
           </h1>
+          {/* Pronunciation */}
           <p
             className='font-sans text-lg tracking-wider text-purple-600 md:text-2xl'
-          ><GB className='inline h-3' /> {res.phonetic}
+          ><GB className='inline h-3' /> {res.phonetics[0].text}
           </p>
         </div>
-        <div className='bg-gray-200 p-4 aspect-square rounded-[50%] text-purple-600 bg-purple-200'>
-          <HiPlay className='text-md' />
-        </div>
+        {/* Audio Player */}
+        <AudioPlayer audioUrl={res.phonetics[0].audio} />
       </main>
 
       {/* meanings (partsOfSpeech, like verb, noun, adjective, adverb, etc.) */}
