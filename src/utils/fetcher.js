@@ -1,15 +1,18 @@
 const BASE_URL = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
 
-const fetcher = async (queryParams) => {
+const fetchWord = async (queryParams) => {
   const fetchURL = `${BASE_URL}${queryParams}`
+
   try {
     const response = await fetch(fetchURL)
     const json = await response.json()
 
-    return Promise.resolve(json)
+    if (response.status === 404) throw new Error('Not found')
+    console.log(json)
+    return { data: json, error: false }
   } catch (error) {
-    Promise.reject(error)
+    return { data: {}, error: true }
   }
 }
 
-export default fetcher
+export default fetchWord

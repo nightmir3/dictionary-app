@@ -3,19 +3,26 @@ import './App.css'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import ResultsPane from './components/ResultsPane'
-import fetcher from './utils/fetcher'
+import fetchWord from './utils/fetcher'
 import InitialContent from './components/InitialContent'
 
 function App () {
   const [activeFont, setActiveFont] = useState('font-serif')
+  // 'idle' | 'fetching' | 'success' | 'not found'
+  const [fetchStatus, setFetchStatus] = useState('idle')
+
   // const [darkModeOn, setDarkModeOn] = useState(true)
 
   const [wordData, setWordData] = useState({})
 
   async function handleSearch (query) {
-    const word = await fetcher(query)
+    setFetchStatus('fetching')
+    const { data, error } = await fetchWord(query)
+
+    setFetchStatus(error ? 'error' : 'success')
+    setWordData(data[0])
+
     // TODO: create an adapter
-    setWordData(word[0])
   }
 
   return (
@@ -25,11 +32,10 @@ function App () {
       <Header />
       <SearchBar onSubmit={handleSearch} />
       {/* TODO: add loader */}
-      {
-        wordData.word
-          ? <ResultsPane res={wordData} />
-          : <InitialContent message='Welcome!' />
-      }
+      {fetchStatus === 'idle' && <InitialContent message='Welcome' />}
+      {fetchStatus === 'fetching' && <InitialContent message='Loading' />}
+      {fetchStatus === 'error' && <InitialContent message='Not Found' />}
+      {fetchStatus === 'success' && <ResultsPane res={wordData} />}
     </div>
   )
 }
