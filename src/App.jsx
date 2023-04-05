@@ -37,8 +37,9 @@ function App () {
       <Header {...preferences} />
       <SearchBar onSubmit={handleSearch} />
 
-      <div className='flex-1 grid place-items-center'>
-        {fetchStatus === 'idle' && <InitialContent message='Welcome' />}
+      {fetchStatus === 'success' && <ResultsPane res={wordData} />}
+      <div className='flex-1 pb-40 grid place-items-center'>
+        {fetchStatus === 'idle' && <InitialContent message='Welcome! 👋' />}
         {fetchStatus === 'fetching' &&
           <Ring
             size={40}
@@ -46,8 +47,7 @@ function App () {
             speed={2}
             color='#8e24aa' // text-purple-600
           />}
-        {fetchStatus === 'error' && <InitialContent message='Not Found' />}
-        {fetchStatus === 'success' && <ResultsPane res={wordData} />}
+        {fetchStatus === 'error' && <InitialContent message='Not Found!' />}
       </div>
     </div>
   )
