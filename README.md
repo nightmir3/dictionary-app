@@ -4,13 +4,20 @@ Dictionary app, based on a [FrontEndMentor.io premium challenge](https://www.fro
 
 As I don't have a premium FrontEndMentor account, I did this layout manually, using the provided JPG images as reference, and adding a few changes.
 
-👷 Currently under development in public on my [Twitch stream](https://www.twitch.tv/matiasbaldanza). Started on March 27, 2023
+> 👷 Currently under development in public on my [Twitch stream](https://www.twitch.tv/matiasbaldanza). Started on March 27, 2023
 
-## Technologies
+## Live demo
+
+> Coming soon!
+
+## Technologies/resources
 
 - [React](https://react.dev/)
 - [TailwindCSS](https://tailwindcss.com/) _(Second project using Tailwind)_
 - [Dictionary API](https://dictionaryapi.dev/)
+- [Standard JS](https://standardjs.com/index.html) (ESLint-based linter)
+- [React Icons](https://react-icons.github.io/react-icons/) (Icon library)
+- [Country Flag Icons](https://www.npmjs.com/package/country-flag-icons) (Icon library)
 
 ## Features
 
