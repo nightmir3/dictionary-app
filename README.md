@@ -16,7 +16,7 @@ As I don't have a premium FrontEndMentor account, I did this layout manually, us
 - [TailwindCSS](https://tailwindcss.com/) _(Second project using Tailwind)_
 - [Dictionary API](https://dictionaryapi.dev/)
 - [Standard JS](https://standardjs.com/index.html) (ESLint-based linter)
-- [React Icons](https://react-icons.github.io/react-icons/) (Icon library)
+- [Heroicons](https://heroicons.com/) via [React Icons](https://react-icons.github.io/react-icons/) (Icon library)
 - [Country Flag Icons](https://www.npmjs.com/package/country-flag-icons) (Icon library)
 
 ## Features
