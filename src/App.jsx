@@ -12,7 +12,11 @@ function App () {
   // 'idle' | 'fetching' | 'success' | 'not found'
   const [fetchStatus, setFetchStatus] = useState('idle')
 
-  // const [darkModeOn, setDarkModeOn] = useState(true)
+  const [preferences, setPreferences] = useState({
+    darkModeOn: false,
+    pronunciationSelected: 'UK',
+    font: 'serif'
+  })
 
   const [wordData, setWordData] = useState({})
 
@@ -30,7 +34,7 @@ function App () {
     <div
       className={`${activeFont} container p-6 md:p-12 mx-auto flex flex-col gap-7 md:gap-10 lg:max-w-4xl dark:text-slate-100 dark:bg-gray-900 h-screen`}
     >
-      <Header />
+      <Header {...preferences} />
       <SearchBar onSubmit={handleSearch} />
 
       <div className='flex-1 grid place-items-center'>
