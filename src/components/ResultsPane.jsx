@@ -4,9 +4,28 @@ import { US, GB } from 'country-flag-icons/react/3x2'
 import RelatedWords from './RelatedDefinitions'
 import AudioPlayer from './AudioPlayer'
 
-function ResultsPane ({ res }) {
+function ResultsPane ({ res, languageVariant }) {
   const { word, phonetics, meanings, sourceUrls } = res
   const phoneticsAvailable = phonetics.length > 0
+
+  // The main reason to filter only the phonetics for UK and US is because I need to flag the variants and some entries might be empty (only text or only audio)
+  const getPhonetics = (phonetics) => {
+    return res.phonetics
+      .filter((phonetic) => phonetic.audio !== '')
+      .map((phonetic) => {
+        return {
+          // Using the free Dictionary API, the only way to identify the variant is by checking the audio URL
+          variant: phonetic.audio?.match(/-uk.mp3$/)
+            ? 'UK'
+            : phonetic.audio?.match(/-us.mp3$/) ? 'US' : '',
+          text: phonetic.text,
+          audio: phonetic.audio
+        }
+      })
+  }
+
+  const phoneticsArray = phoneticsAvailable && getPhonetics(phonetics)
+  console.log(phoneticsArray)
 
   return (
     <div className='flex flex-col gap-6'>
@@ -19,19 +38,31 @@ function ResultsPane ({ res }) {
           {/* Pronunciation */}
           {!phoneticsAvailable
             ? (
-              <p className='font-sans text-lg text-purple-400 md:text-2xl italic'>
-                /No phonetics available/
+              <p className='font-sans text-base md:text-lg text-purple-400 tracking-normal'>
+                /No pronunciation available/
               </p>
               )
             : (
               <p className='font-sans text-lg tracking-wider text-purple-600 md:text-2xl'>
-                <GB className='inline h-3' /> {res.phonetics[0].text}
+                {languageVariant === 'UK'
+                  ? <GB className='inline h-3' />
+                  : <US className='inline h-3' />}
+                {' '}
+                {
+                  // If there is no specific phonetic transcription (phonetic.text) and there is no default phonetic transcription (res.phonetic), then display the message below
+                  phoneticsArray.find((phonetic) => phonetic.variant === languageVariant)
+                    ?.text || res.phonetic || <span className='text-base md:text-lg text-purple-400 tracking-normal'>/No pronunciation available/</span>
+                }
               </p>
               )}
         </div>
         {/* Audio Player */}
         {phoneticsAvailable && (
-          <AudioPlayer audioUrl={res.phonetics[0].audio} />
+          <AudioPlayer
+            audioUrl={
+            phoneticsArray.find((phonetic) => phonetic.variant === languageVariant)?.audio || ''
+          }
+          />
         )}
       </main>
 

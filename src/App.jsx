@@ -6,17 +6,13 @@ import ResultsPane from './components/ResultsPane'
 import fetchWord from './utils/fetcher'
 import InitialContent from './components/InitialContent'
 import { Ring } from '@uiball/loaders'
+import useSettings from './hooks/useSettings'
 
 function App () {
   const [activeFont, setActiveFont] = useState('font-serif')
   // 'idle' | 'fetching' | 'success' | 'not found'
   const [fetchStatus, setFetchStatus] = useState('idle')
-
-  const [preferences, setPreferences] = useState({
-    darkModeOn: false,
-    pronunciationSelected: 'UK',
-    font: 'serif'
-  })
+  const settings = useSettings()
 
   const [wordData, setWordData] = useState({})
 
@@ -34,10 +30,14 @@ function App () {
     <div
       className={`${activeFont} container p-6 md:p-12 mx-auto flex flex-col gap-7 md:gap-10 lg:max-w-4xl dark:text-slate-100 dark:bg-gray-900 h-screen`}
     >
-      <Header {...preferences} />
+      <Header settings={settings} />
       <SearchBar onSubmit={handleSearch} />
 
-      {fetchStatus === 'success' && <ResultsPane res={wordData} />}
+      {fetchStatus === 'success' &&
+        <ResultsPane
+          res={wordData}
+          languageVariant={settings.languageVariant}
+        />}
       <div className='flex-1 pb-40 grid place-items-center'>
         {fetchStatus === 'idle' && <InitialContent message='Welcome! 👋' />}
         {fetchStatus === 'fetching' &&
@@ -45,7 +45,7 @@ function App () {
             size={40}
             lineWeight={5}
             speed={2}
-            color='#8e24aa' // text-purple-600
+            color='#8e24aa'
           />}
         {fetchStatus === 'error' && <InitialContent message='Not Found!' />}
       </div>

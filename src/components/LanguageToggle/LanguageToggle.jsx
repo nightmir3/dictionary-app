@@ -1,11 +1,14 @@
 import { useState } from 'react'
 
-function LanguageToggle ({ label = '' }) {
-  const [languageVariant, setLanguageVariant] = useState('GB')
-
+function LanguageToggle ({ languageVariant, onChange, label = '' }) {
   return (
     <label className='relative inline-flex items-center cursor-pointer'>
-      <input type='checkbox' value='' className='sr-only peer' />
+      <input
+        type='checkbox'
+        checked={languageVariant === 'US' && true}
+        className='sr-only peer'
+        onChange={onChange}
+      />
       <div
         className="w-11 h-6 bg-red-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-gray-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-red-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[url('/icons/GB-1x1.svg')] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-300 dark:peer-checked:bg-blue-500 peer-checked:after:bg-[url('/icons/US-1x1.svg')]"
       />
