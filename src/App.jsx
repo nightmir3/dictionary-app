@@ -28,7 +28,7 @@ function App () {
 
   return (
     <div
-      className={`${activeFont} container p-6 md:p-12 mx-auto flex flex-col gap-7 md:gap-10 lg:max-w-4xl dark:text-slate-100 dark:bg-gray-900 h-screen`}
+      className={`${activeFont} container p-6 md:p-12 mx-auto flex flex-col gap-7 md:gap-10 lg:max-w-4xl dark:text-slate-100 dark:bg-gray-800 h-screen`}
     >
       <Header settings={settings} />
       <SearchBar onSubmit={handleSearch} />

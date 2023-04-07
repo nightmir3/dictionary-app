@@ -9,11 +9,19 @@
         @apply dark:text-gray-300 
     }
 
-    .text-purple-600 {
+   .text-purple-600 {
         @apply dark:text-purple-300
+    }
+
+    .text-black {
+        @apply dark:text-slate-100
     }
 
     .bg-purple-200 {
         @apply dark:bg-purple-600
+    }
+
+    .bg-gray-100 {
+        @apply dark:bg-gray-600
     }
 }
