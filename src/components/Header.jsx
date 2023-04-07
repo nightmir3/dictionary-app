@@ -1,7 +1,8 @@
 import React from 'react'
+import FontToggle from './FontToggle/FontToggle'
 import LanguageToggle from './LanguageToggle/LanguageToggle'
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle'
-import { HiOutlineBookOpen, HiChevronDown } from 'react-icons/hi'
+import { HiOutlineBookOpen } from 'react-icons/hi'
 
 function Header ({ settings }) {
   const handleLanguageChange = () => {
@@ -15,7 +16,10 @@ function Header ({ settings }) {
       <div><HiOutlineBookOpen className='text-4xl' /></div>
       <div className='flex items-center gap-3'>
         {/* Font selector */}
-        <span className='text-sm font-bold md:text-base'>Serif <HiChevronDown className='inline ml-1 text-2xl text-purple-600' /></span>
+        <FontToggle
+          font={settings.font}
+          setFont={settings.setFont}
+        />
         {/* PronunciationToggle */}
         <LanguageToggle
           languageVariant={settings.languageVariant}

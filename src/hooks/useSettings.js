@@ -6,7 +6,7 @@ function useSettings () {
   const [darkModeOn, setDarkModeOn] = React.useState(false)
 
   return {
-    font,
+    font: 'serif',
     setFont,
     languageVariant,
     setLanguageVariant,

@@ -8,7 +8,7 @@ function DarkModeToggle ({ darkModeOn, setDarkModeOn }) {
 
   return (
     <button
-      className='ml-2 outline-offset-4 outline-purple-600'
+      className='ml-2 rounded-md outline-offset-2 outline-purple-600 dark:ring-0'
       onClick={handleDarkModeToggle}
     >
       {darkModeOn
