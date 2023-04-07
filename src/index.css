@@ -24,4 +24,8 @@
     .bg-gray-100 {
         @apply dark:bg-gray-600
     }
+
+    .bg-gray-100 {
+        @apply dark:bg-gray-600
+    }
 }
