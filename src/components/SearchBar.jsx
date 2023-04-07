@@ -30,7 +30,7 @@ function SearchBar ({ onSubmit }) {
       />
       <button
         type='submit'
-      ><HiOutlineSearch className='text-2xl text-purple-600' />
+      ><HiOutlineSearch className='text-2xl text-purple-600 dark:text-purple-400' />
       </button>
     </form>
   )

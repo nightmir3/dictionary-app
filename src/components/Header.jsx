@@ -1,6 +1,7 @@
 import React from 'react'
 import LanguageToggle from './LanguageToggle/LanguageToggle'
-import { HiOutlineBookOpen, HiOutlineMoon, HiOutlineSun, HiChevronDown } from 'react-icons/hi'
+import DarkModeToggle from './DarkModeToggle/DarkModeToggle'
+import { HiOutlineBookOpen, HiChevronDown } from 'react-icons/hi'
 
 function Header ({ settings }) {
   const handleLanguageChange = () => {
@@ -21,7 +22,10 @@ function Header ({ settings }) {
           onChange={handleLanguageChange}
         />
         {/* Dark Mode selector */}
-        <span className='pl-2'><HiOutlineMoon className='text-2xl' /></span>
+        <DarkModeToggle
+          darkModeOn={settings.darkModeOn}
+          setDarkModeOn={settings.setDarkModeOn}
+        />
       </div>
     </div>
   )
