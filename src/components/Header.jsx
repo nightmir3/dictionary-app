@@ -11,7 +11,9 @@ function Header ({ settings }) {
   }
 
   return (
-    <div className='flex justify-between text-gray-500'>
+    <div
+      className='flex justify-between text-gray-500'
+    >
       {/* Logo */}
       <div><HiOutlineBookOpen className='text-4xl' /></div>
       <div className='flex items-center gap-3'>

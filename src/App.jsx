@@ -15,6 +15,7 @@ function App () {
   const settings = useSettings()
 
   const [wordData, setWordData] = useState({})
+  const baseFont = `${settings.font === 'serif' ? 'font-serif' : 'font-sans'}`
 
   async function handleSearch (query) {
     setFetchStatus('fetching')
@@ -35,7 +36,7 @@ function App () {
 
   return (
     <div
-      className={`${activeFont} container p-6 md:p-12 mx-auto flex flex-col gap-7 md:gap-10 lg:max-w-4xl dark:text-slate-100 dark:bg-gray-800 h-screen`}
+      className={`${baseFont} container p-6 md:p-12 mx-auto flex flex-col gap-7 md:gap-10 lg:max-w-4xl dark:text-slate-100 dark:bg-gray-800 h-screen`}
     >
       <Header settings={settings} />
       <SearchBar onSubmit={handleSearch} />
@@ -45,7 +46,7 @@ function App () {
           res={wordData}
           languageVariant={settings.languageVariant}
         />}
-      <div className='flex-1 pb-40 grid place-items-center'>
+      <div className='grid flex-1 pb-40 place-items-center'>
         {fetchStatus === 'idle' && <InitialContent message='Welcome! 👋' />}
         {fetchStatus === 'fetching' &&
           <Ring
